@@ -1,0 +1,4 @@
+interface:
+  display_name: "Personal Blog Vibe Harness"
+  short_description: "No-code personal blog workflow"
+  default_prompt: "Use $personal-blog-vibe-harness to help me create and launch a personal blog I can maintain without coding."
