@@ -10,6 +10,8 @@
 
 ## Visual Direction
 
+## Style Brief
+
 ## Editing Workflow
 
 ## Deployment

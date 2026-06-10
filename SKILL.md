@@ -1,15 +1,17 @@
 ---
 name: personal-blog-vibe-harness
-description: Help non-coders create, launch, and maintain a personal blog or portfolio blog with Codex by composing existing static-site templates, Markdown content, Git-based CMS tools, and deployment platforms. Use when the user wants to "vibe code" a personal blog, set up a no-code publishing workflow, migrate personal writing into a blog, choose an Astro/HugoBlox/Pages CMS route, repair a generated blog project, or create a repeatable blog-building harness for non-technical users.
+description: Help non-coders create, launch, and maintain a personal blog or portfolio blog with Codex by composing existing static-site templates, Markdown content, Git-based CMS tools, deployment platforms, and an iterative visual-style discovery dialogue. Use when the user wants to "vibe code" a personal blog, gradually discover their preferred style through questions and direction boards, set up a no-code publishing workflow, migrate personal writing into a blog, choose an Astro/HugoBlox/Pages CMS route, repair a generated blog project, or create a repeatable blog-building harness for non-technical users.
 ---
 
 # Personal Blog Vibe Harness
 
 ## Operating Goal
 
-Guide Codex to act as a patient implementation harness for personal blogs. The end user should not need to understand Git, Node, Hugo, frontmatter, build logs, or deployment settings to get a maintainable site.
+Guide Codex to act as a patient implementation harness for personal blogs. The end user should not need to understand Git, Node, Hugo, frontmatter, build logs, deployment settings, or visual design vocabulary to get a maintainable site.
 
 Do not reinvent a blog framework, CMS, or hosting platform. Compose mature tools, keep the architecture boring, and make every handoff readable by a non-coder.
+
+Do not silently impose a visual style for a new blog. Discover the user's taste through short questions, direction options, and previews before implementing a look.
 
 ## Default Stack
 
@@ -39,7 +41,7 @@ If the task is not a code change and can be answered directly, answer directly. 
 
 ### 2. Ask Only Blocking Questions
 
-For non-coders, ask at most three questions before starting. Prefer defaults when the answer is not risky.
+For non-coders, ask at most three product questions before the first build brief. Prefer defaults when the answer is not risky.
 
 Minimum useful questions:
 
@@ -49,7 +51,22 @@ Minimum useful questions:
 
 Use `references/intake-and-brief.md` when the user is starting from a vague idea or has many existing materials.
 
-### 3. Produce a Build Brief
+### 3. Discover Visual Style
+
+For `new-blog`, `migration`, and style-heavy `repair-blog` tasks, run a visual-style discovery loop before implementation unless the user explicitly says to use an existing design.
+
+Read `references/visual-style-discovery.md`, then:
+
+- ask one focused style question at a time when the user is unsure;
+- offer 2 to 3 contrasting direction cards when the user lacks vocabulary;
+- capture anti-preferences, not only likes;
+- ask for reference sites, screenshots, images, books, newsletters, blogs, or brands if available;
+- translate vague words into concrete design choices;
+- produce a `Style Brief` and ask the user to confirm or correct it before building the first visual version.
+
+If the user wants speed, use a provisional style brief, label it as provisional, and keep the first implementation easy to restyle.
+
+### 4. Produce a Build Brief
 
 Before editing a site, write a short build brief in the target project or in the conversation:
 
@@ -57,13 +74,14 @@ Before editing a site, write a short build brief in the target project or in the
 - chosen stack and why
 - content model
 - visual direction
+- confirmed style brief or provisional style brief
 - editing workflow
 - deployment target
 - risks and assumptions
 
 Keep this brief practical. It is a working contract, not a strategy memo.
 
-### 4. Build or Repair Incrementally
+### 5. Build or Repair Incrementally
 
 Use the existing project style when a project already exists. For a new project:
 
@@ -76,7 +94,7 @@ Use the existing project style when a project already exists. For a new project:
 
 For CMS/deploy specifics, read `references/cms-deployment.md`.
 
-### 5. Make Maintenance Obvious
+### 6. Make Maintenance Obvious
 
 Every delivered blog should include an obvious way to do these tasks:
 
@@ -89,7 +107,7 @@ Every delivered blog should include an obvious way to do these tasks:
 
 Use `references/maintenance-playbooks.md` to generate concise user-facing instructions.
 
-### 6. Validate
+### 7. Validate
 
 After code or configuration changes, run the checks appropriate to the project:
 
@@ -101,13 +119,14 @@ After code or configuration changes, run the checks appropriate to the project:
 
 Use `scripts/audit_blog_project.py <project-root>` for a quick structural audit. Treat warnings as action items unless they are clearly irrelevant to the chosen stack.
 
-### 7. Handoff
+### 8. Handoff
 
 End with:
 
 - what was created or changed;
 - where the user should open the project;
 - how to preview;
+- what style direction was implemented and how to change it;
 - how to write the next post;
 - what still needs a human account action, such as connecting GitHub, Pages CMS, Cloudflare, or DNS.
 
@@ -126,6 +145,7 @@ Never ask the user to paste API keys into chat. For GitHub or hosting auth, ask 
 
 - `references/stack-routes.md`: stack selection matrix and build-vs-buy rationale.
 - `references/intake-and-brief.md`: concise intake flow and build brief template.
+- `references/visual-style-discovery.md`: iterative style interview, direction cards, and style brief format.
 - `references/cms-deployment.md`: Pages CMS and deployment implementation notes.
 - `references/maintenance-playbooks.md`: non-coder maintenance handoff patterns.
 - `scripts/audit_blog_project.py`: structural audit for generated or repaired blog projects.

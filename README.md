@@ -11,6 +11,7 @@ This version is suitable for self-use and small internal trials. It has not yet 
 This skill guides Codex through a practical blog-building workflow:
 
 - clarify the user's blog goal with only a few blocking questions;
+- discover the user's preferred visual style through an iterative dialogue;
 - choose a conservative stack such as Astro, HugoBlox, Pages CMS, GitHub Pages, or Cloudflare Pages;
 - create or repair a maintainable Markdown-based blog project;
 - configure a browser-editable content workflow when needed;
@@ -25,6 +26,7 @@ Use this skill when someone asks to:
 
 - vibe-code a personal blog with Codex;
 - create a personal essay, notes, portfolio, research, or technical blog;
+- gradually discover a blog style through questions and direction options;
 - migrate existing writing into a static blog;
 - make an existing Markdown blog editable by a non-coder;
 - add Pages CMS or deployment guidance to a blog project;
@@ -81,7 +83,7 @@ Then start a new Codex session so the skill metadata can be discovered.
 ## Example Prompt
 
 ```text
-Use $personal-blog-vibe-harness to help me create and launch a personal blog I can maintain without coding.
+Use $personal-blog-vibe-harness to ask me questions, discover my preferred blog style, and help me create a personal blog I can maintain without coding.
 ```
 
 ## Audit Script
@@ -121,6 +123,7 @@ Skill is valid!
 
 - Run an end-to-end Astro blog launch trial.
 - Run an end-to-end HugoBlox profile/blog launch trial.
+- Forward-test the visual style discovery loop with users who have vague style preferences.
 - Add a minimal example output project.
 - Add release tags after real-world trial feedback.
 - Tighten Pages CMS templates against generated project variants.
